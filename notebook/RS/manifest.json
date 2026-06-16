@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Steam Hybrid AI Recommender",
+  "version": "1.1",
+  "description": "Gợi ý game Steam thông minh dựa trên mô hình AI Lai (Hybrid AI) chạy trên máy chủ Colab.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*.steampowered.com/*",
+    "*://steamcommunity.com/*",
+    "https://*.loca.lt/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://store.steampowered.com/*", 
+        "*://steamcommunity.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
